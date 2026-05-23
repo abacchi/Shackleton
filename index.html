@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Endurance — Shackleton's Antarctic Journey</title>
+<meta name="description" content="The story of Ernest Shackleton's 1914–1917 Imperial Trans-Antarctic Expedition aboard the Endurance." />
+<link rel="stylesheet" href="styles.css" />
+<script defer src="script.js"></script>
+</head>
+<body>
+
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">1914 — 1917</p>
+    <h1>Endurance</h1>
+    <p class="tagline">Sir Ernest Shackleton's Imperial Trans-Antarctic Expedition, and one of the great survival stories ever told.</p>
+  </div>
+</header>
+
+<main>
+
+  <section id="prologue" class="chapter">
+    <h2>"Men wanted for hazardous journey."</h2>
+    <p>By 1914, the South Pole had been reached. Roald Amundsen had stood there in December 1911; Robert Falcon Scott had followed weeks later, and died on the return. The age of polar firsts seemed to be closing. Ernest Shackleton, twice already a veteran of the southern ice, refused to accept that the map was finished.</p>
+    <p>He proposed something audacious: to cross the Antarctic continent on foot, from the Weddell Sea to the Ross Sea, by way of the Pole. To do it, he assembled twenty-seven men, a Norwegian-built barquentine of oak and Norwegian fir, and a sled-dog team. He named the ship for his family motto — <em>Fortitudine vincimus</em>, "by endurance we conquer."</p>
+  </section>
+
+  <section class="chapter alt">
+    <h2>Into the Weddell Sea</h2>
+    <p>The <em>Endurance</em> sailed from South Georgia on 5 December 1914. Within two days she met the pack ice — earlier and heavier than expected. For six weeks she pushed south, threading leads through floes that closed behind her like doors.</p>
+    <figure>
+      <img src="images/endurance-night.jpg" alt="The Endurance frozen into the pack ice, mid-summer 1915, photographed by Frank Hurley." loading="lazy" />
+      <figcaption>A mid-summer sunset over the trapped <em>Endurance</em>, 1915. — Frank Hurley</figcaption>
+    </figure>
+    <p>On 19 January 1915, within sight of the Antarctic mainland, the ice closed for good. The ship was frozen fast, "like an almond in a piece of toffee," as one crew member put it. They drifted with the pack through the winter darkness, helpless, while the floes slowly tightened their grip.</p>
+  </section>
+
+  <section class="chapter map-section">
+    <h2>800 days on the ice and sea</h2>
+    <figure class="map-figure">
+      <svg id="route-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="map-title">
+        <title id="map-title">The route of the Endurance expedition, 1914–1916</title>
+        <defs>
+          <radialGradient id="oceanGrad" cx="50%" cy="50%" r="75%">
+            <stop offset="0%" stop-color="#101822"/>
+            <stop offset="100%" stop-color="#070a0e"/>
+          </radialGradient>
+          <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+            <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#1a222c" stroke-width="0.5"/>
+          </pattern>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#d9e3ee"/>
+          </marker>
+          <marker id="arrowRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#c97b6a"/>
+          </marker>
+          <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#d9b066"/>
+          </marker>
+        </defs>
+        <rect width="800" height="800" fill="url(#oceanGrad)"/>
+        <rect width="800" height="800" fill="url(#grid)"/>
+        <path d="M 0 800 L 0 600 Q 80 540 180 500 Q 250 460 288 338 Q 305 380 340 420 Q 420 480 520 540 Q 640 600 800 640 L 800 800 Z"
+              fill="#1c2530" stroke="#2e3a47" stroke-width="1"/>
+        <ellipse cx="611" cy="68" rx="28" ry="6" fill="#1c2530" stroke="#2e3a47" stroke-width="1" transform="rotate(-25 611 68)"/>
+        <circle cx="317" cy="280" r="5" fill="#1c2530" stroke="#2e3a47" stroke-width="1"/>
+
+        <path class="route" id="route-endurance" d="M 611 68 Q 680 350 688 754" fill="none" stroke="#d9e3ee" stroke-width="2" marker-end="url(#arrow)"/>
+        <path class="route" id="route-drift" d="M 688 754 Q 540 700 420 600 Q 360 560 360 508 Q 350 410 344 292"
+              fill="none" stroke="#7da3c9" stroke-width="2" stroke-dasharray="4 5" marker-end="url(#arrow)"/>
+        <path class="route" id="route-boats" d="M 344 292 L 317 280" fill="none" stroke="#d9b066" stroke-width="2.5" marker-end="url(#arrowAmber)"/>
+        <path class="route" id="route-caird" d="M 317 280 Q 440 140 611 68" fill="none" stroke="#c97b6a" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+        <path class="route" id="route-rescue" d="M 611 68 Q 460 160 320 285" fill="none" stroke="#6a7480" stroke-width="1" stroke-dasharray="2 4"/>
+
+        <g font-family="Helvetica Neue, Arial, sans-serif" fill="#e8eaed" font-size="14">
+          <text x="640" y="62">South Georgia</text>
+          <text x="640" y="80" font-size="10" fill="#9aa3ad" font-style="italic">Stromness whaling station</text>
+          <text x="330" y="275">Elephant Island</text>
+          <text x="330" y="291" font-size="10" fill="#9aa3ad" font-style="italic">15 Apr 1916 — 30 Aug 1916</text>
+          <text x="700" y="748" text-anchor="end">Endurance trapped</text>
+          <text x="700" y="765" text-anchor="end" font-size="10" fill="#9aa3ad" font-style="italic">19 Jan 1915 — Vahsel Bay</text>
+          <text x="372" y="510">Endurance crushed</text>
+          <text x="372" y="526" font-size="10" fill="#9aa3ad" font-style="italic">21 Nov 1915</text>
+          <text x="120" y="640" fill="#5b6772" font-size="20" letter-spacing="6">ANTARCTICA</text>
+        </g>
+        <g transform="translate(60 80)" font-family="Helvetica Neue, Arial, sans-serif" fill="#9aa3ad" font-size="10">
+          <circle r="22" fill="none" stroke="#2e3a47"/>
+          <path d="M 0 -22 L 0 22 M -22 0 L 22 0" stroke="#2e3a47"/>
+          <text x="-3" y="-26">N</text>
+          <text x="-3" y="34">S</text>
+          <text x="-30" y="3">W</text>
+          <text x="26" y="3">E</text>
+        </g>
+        <g transform="translate(40 720)" font-family="Helvetica Neue, Arial, sans-serif" font-size="11" fill="#9aa3ad">
+          <rect x="-10" y="-50" width="280" height="70" fill="#0a0d12" stroke="#2e3a47"/>
+          <line x1="0" y1="-32" x2="24" y2="-32" stroke="#d9e3ee" stroke-width="2"/>
+          <text x="32" y="-29">Endurance under sail</text>
+          <line x1="0" y1="-15" x2="24" y2="-15" stroke="#7da3c9" stroke-width="2" stroke-dasharray="4 5"/>
+          <text x="32" y="-12">Drift in the ice</text>
+          <line x1="0" y1="2" x2="24" y2="2" stroke="#d9b066" stroke-width="2"/>
+          <text x="32" y="5">Boats to Elephant I.</text>
+          <line x1="140" y1="-15" x2="164" y2="-15" stroke="#c97b6a" stroke-width="2"/>
+          <text x="172" y="-12">James Caird voyage</text>
+          <line x1="140" y1="2" x2="164" y2="2" stroke="#6a7480" stroke-width="1" stroke-dasharray="2 4"/>
+          <text x="172" y="5">Yelcho rescue</text>
+        </g>
+      </svg>
+      <figcaption>From South Georgia into the Weddell Sea, across the ice, and back again.</figcaption>
+    </figure>
+  </section>
+
+  <section class="chapter">
+    <h2>The ship is crushed</h2>
+    <p>By October 1915 the pressure had become unbearable. Beams snapped like rifle shots. Water poured into the hold faster than the pumps could clear it. On 27 October, Shackleton gave the order to abandon ship. The men camped on the ice and watched the <em>Endurance</em> lift, twist, and at last on 21 November slip beneath the floe.</p>
+    <figure>
+      <img src="images/endurance-crushed.jpg" alt="The Endurance heeled over and being crushed by the pack ice, 1915." loading="lazy" />
+      <figcaption>The <em>Endurance</em> heeled over as the ice closed in, October 1915. — Frank Hurley</figcaption>
+    </figure>
+    <blockquote>"She's gone, boys."<cite>— Shackleton, 21 November 1915</cite></blockquote>
+    <p>They were now 1,200 miles from the nearest known human being, with three small lifeboats, what they could drag, and no way to call for help.</p>
+  </section>
+
+  <section class="chapter alt">
+    <h2>Five months on the floe</h2>
+    <p>Shackleton's first plan — to march across the ice to land — failed within days; the surface was too broken. So they camped, and waited, and drifted. For five months they lived on a slab of ice the size of a small field, eating seal and penguin, watching cracks open beneath their tents.</p>
+    <p>The discipline Shackleton kept among the men in this period is what most historians regard as his masterpiece. There were no mutinies. There were no breakdowns. Routines were enforced. Grievances were absorbed by the leader and not allowed to spread.</p>
+    <figure>
+      <img src="images/ocean-camp.jpg" alt="Shackleton and crew at their camp on the ice floe after losing the Endurance." loading="lazy" />
+      <figcaption>Camp on the floe — home for nearly five months. — Frank Hurley</figcaption>
+    </figure>
+  </section>
+
+  <section class="chapter">
+    <h2>The boat journey to Elephant Island</h2>
+    <p>On 9 April 1916 the floe broke under their feet and the three lifeboats — the <em>James Caird</em>, <em>Dudley Docker</em>, and <em>Stancomb Wills</em> — were launched into the open Southern Ocean. For seven days the men rowed and bailed through gales, sleet, and floes that threatened to grind the boats to splinters. They were soaked, frostbitten, and hallucinating from thirst.</p>
+    <p>On 15 April they made landfall on Elephant Island — the first solid ground under their feet in 497 days. It was uninhabited, lashed by storms, and lay far outside any shipping route. They had survived, but they had not been saved.</p>
+
+    <aside class="diary">
+      <p class="diary-label">From the diary of Thomas Orde-Lees — 9 April 1916</p>
+      <p>"About 2 p.m. we all shoved off, the <em>Caird</em>, of course, leading. Every one felt very fit and full of hope, but the attempt to break out of the pack in such small boats… we pulled hard making about three miles to the north when our further course in that direction was arrested by a bolt of loose pack, whereupon we bore to the westward.</p>
+      <p>"Immediately after, all three boats passed under the lee of the pack edge when all of a sudden, almost before we realized it, the whole pack was in motion as if impelled by some mysterious force."</p>
+      <p class="diary-attrib">— Orde-Lees was the expedition's ski and motor-sledge expert. His journal of the boat journey was unpublished until decades later.</p>
+    </aside>
+  </section>
+
+  <section class="chapter alt feature">
+    <h2>800 miles in an open boat</h2>
+    <p>There was no realistic hope of being found. Shackleton made the decision that defines the expedition. With five men — Worsley, Crean, McNish, McCarthy, and Vincent — he would take the largest lifeboat, the 22-foot <em>James Caird</em>, and sail across 800 miles of the worst ocean on earth to South Georgia, where a whaling station might raise help.</p>
+    <p>The voyage took sixteen days. Frank Worsley navigated by sextant with only four sun sightings the entire trip, through waves that the crew estimated at sixty feet. They survived a hurricane that sank a 500-ton steamer the same night. When they made landfall on South Georgia on 10 May 1916, they had landed on the wrong side of the island.</p>
+    <figure>
+      <img src="images/james-caird.jpg" alt="The James Caird lifeboat being launched from the beach at Elephant Island." loading="lazy" />
+      <figcaption>Launching the <em>James Caird</em> from Elephant Island, 24 April 1916. — Frank Hurley</figcaption>
+    </figure>
+  </section>
+
+  <section class="chapter">
+    <h2>Across South Georgia</h2>
+    <p>Three of the six were too broken to go further. Shackleton, Worsley, and Crean — without map, without sleep, with screws driven through their boot soles for grip — crossed the uncharted mountainous interior of South Georgia in 36 hours. No one had ever crossed it before. They walked into the Stromness whaling station on the morning of 20 May 1916. The station manager did not recognize them.</p>
+  </section>
+
+  <section class="chapter alt">
+    <h2>The rescue</h2>
+    <p>The men left on Elephant Island had been waiting under two upturned lifeboats for four and a half months. Shackleton made four attempts to reach them, each turned back by ice. On 30 August 1916, aboard the Chilean tug <em>Yelcho</em>, he broke through at last.</p>
+    <p>Frank Wild, in command on the island, had rolled up the men's sleeping bags every morning in case that was the day. As the <em>Yelcho</em> appeared, Shackleton, standing at the bow, counted figures on the beach through his binoculars and shouted: "Are you all well?"</p>
+    <blockquote>"All safe, all well!"<cite>— Frank Wild, Elephant Island, 30 August 1916</cite></blockquote>
+    <p>Every single one of the twenty-eight men who had sailed south on the <em>Endurance</em> came home.</p>
+  </section>
+
+  <section class="chapter epilogue">
+    <h2>By endurance we conquer</h2>
+    <p>The expedition failed in its stated goal. No one crossed the continent. The ship was lost. The science programme was abandoned. By any 1914 measure of polar achievement, the Imperial Trans-Antarctic Expedition was a disaster.</p>
+    <p>And yet it has outlasted nearly every expedition that "succeeded." What Shackleton brought back was not a flag plant or a measurement, but a demonstration — that under conditions designed to break men, a leader who refused to lose a single one of them could keep them all alive. That is why, a century later, his name still travels with the ice.</p>
+  </section>
+
+</main>
+
+  <section class="chapter timeline-section">
+    <h2>1914 — 1916</h2>
+    <ol class="timeline">
+      <li><span class="date">8 Aug 1914</span><span class="event"><em>Endurance</em> departs Plymouth as Britain enters the First World War.</span></li>
+      <li><span class="date">5 Dec 1914</span><span class="event">Sails from South Georgia for the Weddell Sea.</span></li>
+      <li><span class="date">19 Jan 1915</span><span class="event">Frozen fast in the pack ice within sight of the continent.</span></li>
+      <li><span class="date">Feb–Oct 1915</span><span class="event">Ship drifts north with the pack through the polar winter.</span></li>
+      <li><span class="date">27 Oct 1915</span><span class="event">Shackleton orders the ship abandoned as the ice closes in.</span></li>
+      <li><span class="date">21 Nov 1915</span><span class="event"><em>Endurance</em> sinks beneath the floe.</span></li>
+      <li><span class="date">Dec 1915 – Apr 1916</span><span class="event">The crew lives on the drifting ice — Ocean Camp, then Patience Camp.</span></li>
+      <li><span class="date">9 Apr 1916</span><span class="event">The floe breaks under them; the three lifeboats are launched.</span></li>
+      <li><span class="date">15 Apr 1916</span><span class="event">Landfall on Elephant Island after seven days at sea.</span></li>
+      <li><span class="date">24 Apr 1916</span><span class="event">The <em>James Caird</em> departs for South Georgia with six men.</span></li>
+      <li><span class="date">10 May 1916</span><span class="event">Landfall on the uninhabited south coast of South Georgia.</span></li>
+      <li><span class="date">19–20 May 1916</span><span class="event">Shackleton, Worsley, and Crean cross the island in 36 hours.</span></li>
+      <li><span class="date">30 Aug 1916</span><span class="event">The <em>Yelcho</em> reaches Elephant Island. All twenty-two men rescued alive.</span></li>
+    </ol>
+  </section>
+
+<footer>
+  <p>A small tribute, built as a static page. Sources: Shackleton, <em>South</em> (1919); Worsley, <em>Endurance</em> (1931); Alfred Lansing, <em>Endurance: Shackleton's Incredible Voyage</em> (1959).</p>
+</footer>
+
+</body>
+</html>
